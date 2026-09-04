@@ -56,8 +56,16 @@ st.markdown(
 
     .stApp {
         background:
-            radial-gradient(circle at 15% 20%, rgba(20, 184, 166, 0.10), transparent 25%),
-            radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.10), transparent 25%),
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(20, 184, 166, 0.10),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 85% 15%,
+                rgba(59, 130, 246, 0.10),
+                transparent 25%
+            ),
             linear-gradient(
                 135deg,
                 #f0f9ff 0%,
@@ -73,15 +81,22 @@ st.markdown(
     }
 
     .money-banner {
+        display: block;
+        width: 100%;
         text-align: center;
         font-size: 2rem;
         letter-spacing: 0.7rem;
         opacity: 0.75;
-        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.8rem;
+        padding-top: 0.5rem;
+        line-height: 1.8;
+        overflow: visible;
         animation: floatMoney 4s ease-in-out infinite;
     }
 
     @keyframes floatMoney {
+
         0% {
             transform: translateY(0px);
         }
@@ -101,7 +116,8 @@ st.markdown(
         border-radius: 26px;
         box-shadow:
             0 18px 45px rgba(15, 23, 42, 0.10);
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border:
+            1px solid rgba(148, 163, 184, 0.18);
         margin-bottom: 1.5rem;
     }
 
@@ -150,7 +166,8 @@ st.markdown(
         font-size: 1.5rem;
         font-weight: 800;
         color: #0f172a;
-        border: 1px solid rgba(20, 184, 166, 0.18);
+        border:
+            1px solid rgba(20, 184, 166, 0.18);
     }
 
     .footer-note {
@@ -194,10 +211,17 @@ st.markdown(
         text-decoration: underline;
     }
 
+
+    /* ----------------------------------------------
+       Mobile design
+       ---------------------------------------------- */
+
     @media (max-width: 600px) {
 
         .block-container {
-            padding-top: 1rem;
+            padding-top: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         .main-card {
@@ -209,9 +233,34 @@ st.markdown(
             font-size: 2rem;
         }
 
+        .hero-subtitle {
+            font-size: 0.95rem;
+        }
+
         .money-banner {
-            font-size: 1.5rem;
-            letter-spacing: 0.3rem;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 1.35rem;
+            letter-spacing: 0.15rem;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            padding-top: 0.3rem;
+            line-height: 1.8;
+            overflow: visible;
+        }
+
+        .result-card {
+            font-size: 1.2rem;
+            padding: 1.2rem;
+        }
+
+        .developer-name {
+            font-size: 0.95rem;
+        }
+
+        .developer-tech {
+            font-size: 0.8rem;
         }
     }
 
@@ -420,10 +469,15 @@ st.markdown(
 
 st.markdown(
     '<div class="developer-card">'
-    '<div class="developer-name">Developed by Tarek Aldakhil</div>'
-    '<div class="developer-tech">Python • Streamlit • REST API</div>'
+    '<div class="developer-name">'
+    'Developed by Tarek Aldakhil'
+    '</div>'
+    '<div class="developer-tech">'
+    'Python • Streamlit • REST API'
+    '</div>'
     '<div class="developer-link">'
-    '<a href="https://github.com/tarek1983dakhil-wq" target="_blank">'
+    '<a href="https://github.com/tarek1983dakhil-wq" '
+    'target="_blank">'
     'GitHub'
     '</a>'
     '</div>'
