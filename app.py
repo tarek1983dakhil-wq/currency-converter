@@ -219,7 +219,7 @@ st.markdown(
     @media (max-width: 600px) {
 
         .block-container {
-            padding-top: 0.5rem;
+            padding-top: 4rem !important;
             padding-left: 1rem;
             padding-right: 1rem;
         }
@@ -238,16 +238,18 @@ st.markdown(
         }
 
         .money-banner {
-            display: block;
+            display: block !important;
+            position: relative !important;
+            z-index: 10 !important;
             width: 100%;
             text-align: center;
             font-size: 1.35rem;
             letter-spacing: 0.15rem;
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-            padding-top: 0.3rem;
+            margin-top: 0.5rem !important;
+            margin-bottom: 1rem;
+            padding-top: 0.5rem;
             line-height: 1.8;
-            overflow: visible;
+            overflow: visible !important;
         }
 
         .result-card {
@@ -325,25 +327,17 @@ def format_currency(code):
 if language == "العربية":
 
     title = "💱 محول العملات"
-
     subtitle = "تحويل العملات باستخدام أسعار الصرف الحالية"
-
     amount_label = "المبلغ"
-
     from_label = "من"
-
     to_label = "إلى"
 
 else:
 
     title = "💱 Währungsrechner"
-
     subtitle = "Währungen mit aktuellen Wechselkursen umrechnen"
-
     amount_label = "Betrag"
-
     from_label = "Von"
-
     to_label = "Nach"
 
 
@@ -356,12 +350,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 st.markdown(
     f'<div class="hero-title">{title}</div>',
     unsafe_allow_html=True
 )
-
 
 st.markdown(
     f'<div class="hero-subtitle">{subtitle}</div>',
@@ -386,7 +378,6 @@ amount = st.number_input(
 
 col1, col2 = st.columns(2)
 
-
 with col1:
 
     from_currency = st.selectbox(
@@ -394,7 +385,6 @@ with col1:
         currencies,
         format_func=format_currency
     )
-
 
 with col2:
 
